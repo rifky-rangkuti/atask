@@ -1,4 +1,4 @@
-import NextAuth, { Session } from "next-auth";
+import NextAuth from "next-auth";
 import GithubProvider from "next-auth/providers/github";
 
 const handler = NextAuth({
@@ -25,6 +25,7 @@ const handler = NextAuth({
       return token;
     },
   },
+  secret: process.env.NEXT_PUBLIC_GITHUB_SECRET,
 });
 
 export { handler as GET, handler as POST };
