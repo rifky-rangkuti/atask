@@ -45,10 +45,12 @@ export default function Board({
             {isLoading ? "Loading..." : "Search"}
           </button>
         </form>
-        {users.length > 0 && (
+        {users.length > 0 ? (
           <p className="mt-2 text-gray-500">
             Showing users for &quot;{search}&quot;
           </p>
+        ) : (
+          <p className="mt-2 text-gray-500">Your search does not match.</p>
         )}
         <div className="mt-4">
           {users.map((user, idx) => (

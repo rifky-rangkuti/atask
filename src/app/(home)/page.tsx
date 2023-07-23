@@ -37,12 +37,12 @@ export default function Home() {
       )}
     >
       {session.status === "unauthenticated" && (
-        <Link href="api/auth/signin" className="text-white">
+        <Link href="api/auth/signin" className="text-white text-center">
           Sign In First!
         </Link>
       )}
       {session.status === "loading" && (
-        <p className="text-white text-3xl font-semibold">
+        <p className="text-white text-3xl font-semibold text-center">
           I understand your patience is Amazing...
         </p>
       )}
