@@ -21,10 +21,12 @@ export default function Board({
         <form
           onSubmit={async (e) => {
             e.preventDefault();
+            setLoading(true);
             const res = await searchUsers(search, token);
             if (res.status === 200) {
               setUsers(res.data.items);
             }
+            setLoading(false);
           }}
         >
           <input
